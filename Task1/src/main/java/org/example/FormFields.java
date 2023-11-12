@@ -8,17 +8,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class FormFields {
 
-    public static void main(String[] args)  {
+    public static void task7(WebDriver driver)  {
 
-        System.setProperty("webdriver.chrome.driver", "C:\\JavaStudy\\chromedriver-win64 118\\chromedriver-win64\\chromedriver.exe");
-
-        WebDriver driver = new ChromeDriver();
         driver.get("https://www.epam.com/about/who-we-are/contact");
         driver.manage().window().maximize();
 
         //accept cookies
-        driver.findElement(By.id("onetrust-accept-btn-handler")).click();
-        WebElement ourLocations = driver.findElement(By.xpath("//button[@id = 'onetrust-accept-btn-handler']"));
+        /*driver.findElement(By.id("onetrust-accept-btn-handler")).click();
+        WebElement ourLocations = driver.findElement(By.xpath("//button[@id = 'onetrust-accept-btn-handler']"));*/
 
 
         //scroll to element
@@ -72,7 +69,6 @@ public class FormFields {
         WebElement phoneError = driver.findElement(By.xpath("//span[contains(@id, 'user_phone-error')]"));
         String itemPhone = phoneError.getText();
         Assert.assertEquals(itemPhone, "This is a required field");
-
 
         }
     }

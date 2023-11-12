@@ -60,5 +60,7 @@ public class Sorting {
         }));
 
         Assert.assertEquals(elementAZSorted, listAZCopy);
+        
+        driver.quit();
     }
 }

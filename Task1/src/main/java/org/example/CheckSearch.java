@@ -9,11 +9,8 @@ import static org.junit.Assert.assertNotEquals;
 
 
 public class CheckSearch  {
-    public static void main(String[] args)  {
+    public static void task6(WebDriver driver)  {
 
-        System.setProperty("webdriver.chrome.driver", "C:\\JavaStudy\\chromedriver-win64 118\\chromedriver-win64\\chromedriver.exe");
-
-        WebDriver driver = new ChromeDriver();
         driver.get("https://www.epam.com/");
         driver.manage().window().maximize();
 
@@ -25,7 +22,7 @@ public class CheckSearch  {
         searchField.sendKeys("AI");
         searchField.sendKeys(Keys.RETURN);
 
-        WebElement searchText = driver.findElement(By.className("search-results__counter"));
+        WebElement searchText = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("search-results__counter")));
         String actualResultText = searchText.getText();
 
 

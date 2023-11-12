@@ -12,27 +12,20 @@ import java.io.File;
 public class DownloadReport {
 
 
-    public static void main(String[] args) {
+    public static void task9(WebDriver driver) {
 
-        System.setProperty("webdriver.chrome.driver", "C:\\JavaStudy\\chromedriver-win64 118\\chromedriver-win64\\chromedriver.exe");
-
-        WebDriver driver = new ChromeDriver();
         driver.get("https://www.epam.com/about");
         driver.manage().window().maximize();
 
         //accept cookies
-        driver.findElement(By.id("onetrust-accept-btn-handler")).click();
+        //driver.findElement(By.id("onetrust-accept-btn-handler")).click();
 
         //scroll to the download button
         WebElement downloadButton = driver.findElement(By.xpath(("(//a[@class=\"button-ui-23 btn-focusable\"])[1]")));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView();", downloadButton);
 
-        /*String href = downloadButton.getAttribute("href");
-        Assert.assertThat(href, containsString("EPAM_Corporate_Overview_Q3_october1.pdf"));
-*/
         downloadButton.click();
-
 
 
         // wait for the file to download
@@ -57,7 +50,7 @@ public class DownloadReport {
             String fileName = file.getName();
             System.out.println(fileName);
             if (fileName.startsWith("EPAM_Corporate_Overview") && fileName.endsWith(".pdf")) {
-//                System.out.println("Downloaded file name: " + fileName);
+
                 fileFound = true;
                 break;
             }
