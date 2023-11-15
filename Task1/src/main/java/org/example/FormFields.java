@@ -21,7 +21,7 @@ public class FormFields {
         //scroll to element
 
         WebDriverWait wait = new WebDriverWait(driver, 10);
-        WebElement AskUs = driver.findElement(By.xpath("//*[@id=\"main\"]/div[1]/div[2]/section/div[3]/div[5]/div/p/span/span"));
+        WebElement AskUs = driver.findElement(By.xpath("//span[contains(text(),'Ask Us Anything')]"));
 
 
         JavascriptExecutor js = (JavascriptExecutor) driver;

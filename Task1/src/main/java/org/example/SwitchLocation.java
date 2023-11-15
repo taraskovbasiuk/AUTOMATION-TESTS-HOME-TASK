@@ -34,27 +34,27 @@ public class SwitchLocation {
             WebDriverWait wait = new WebDriverWait(driver, 10);
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@id='onetrust-accept-btn-handler']"))).click();
 
-            WebElement regionsAmericas = driver.findElement(By.xpath("//*[@id=\"id-890298b8-f4a7-3f75-8a76-be36dc4490fd\"]/div[1]/div/div/div[1]/a"));
+            WebElement regionsAmericas = driver.findElement(By.xpath("//a[normalize-space()='AMERICAS']"));
             String SectionAmericas = regionsAmericas.getText();
             assertEquals("AMERICAS", SectionAmericas);
 
-            WebElement regionsEMEA = driver.findElement(By.xpath("//*[@id=\"id-890298b8-f4a7-3f75-8a76-be36dc4490fd\"]/div[1]/div/div/div[2]/a"));
+            WebElement regionsEMEA = driver.findElement(By.xpath("//a[normalize-space()='EMEA']"));
             String SectionEMEA = regionsEMEA.getText();
             assertEquals("EMEA", SectionEMEA);
 
-            WebElement regionsAPAC = driver.findElement(By.xpath("//*[@id=\"id-890298b8-f4a7-3f75-8a76-be36dc4490fd\"]/div[1]/div/div/div[3]/a"));
+            WebElement regionsAPAC = driver.findElement(By.xpath("//a[normalize-space()='APAC']"));
             String SectionAPAC = regionsAPAC.getText();
             assertEquals("APAC", SectionAPAC);
 
             //select regions under locations
-            driver.findElement(By.xpath("//*[@id=\"id-890298b8-f4a7-3f75-8a76-be36dc4490fd\"]/div[2]/div/div/div[1]/div[1]/div/div[6]/div/button")).click();
+            regionsAmericas.click();
 
             //Check Americas locations
-            WebElement ColombiaLocations = driver.findElement(By.xpath("(//*[@class=\"locations-viewer-23__country-counter body-text-small\"])[1]"));
+            WebElement ColombiaLocations = driver.findElement(By.xpath("//div[contains(text(),'Colombia')]"));
             String ColumbLocTxt = ColombiaLocations.getText();
             Assert.assertEquals(ColumbLocTxt, "2 Locations");
 
-            driver.findElement(By.xpath("//*[@id=\"id-890298b8-f4a7-3f75-8a76-be36dc4490fd\"]/div[2]/div/div/div[1]/div[1]/div/div[9]/div/button/div")).click();
+            driver.findElement(By.xpath("//div[contains(text(),'United States')]")).click();
 
             WebElement USALocations = driver.findElement(By.xpath("(//*[@class=\"locations-viewer-23__country-counter body-text-small\"])[1]"));
             String USALocTxt = USALocations.getText();

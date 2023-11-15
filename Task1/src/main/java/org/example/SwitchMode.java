@@ -16,7 +16,7 @@ public class SwitchMode {
 
         WebDriverWait wait = new WebDriverWait(driver, 10);
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"wrapper\"]/div[2]/div[1]/header/div/div/section/div/div "))).click(); //(//div[@class='theme-switcher'])[2]
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".theme-switcher[shub-ins='1']"))).click();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//body[@class='fonts-loaded light-mode']")));
         String lightTheme = driver.findElement(By.xpath("/html/body")).getAttribute("class");

@@ -27,27 +27,27 @@ public class CheckPolicies {
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("arguments[0].scrollIntoView();", policies);
 
-            WebElement investors = driver.findElement(By.xpath("//*[@id=\"wrapper\"]/div[3]/div[1]/footer/div/div/div[1]/div[2]/div/ul[1]/li[1]/a"));
+            WebElement investors = driver.findElement(By.xpath("//a[normalize-space()='INVESTORS']"));
             String investorsName = investors.getText();
             assertEquals("INVESTORS", investorsName);
 
-            WebElement openSorce = driver.findElement(By.xpath("//*[@id=\"wrapper\"]/div[3]/div[1]/footer/div/div/div[1]/div[2]/div/ul[1]/li[2]/a"));
+            WebElement openSorce = driver.findElement(By.xpath("//a[normalize-space()='OPEN SOURCE']"));
             String openSorceName = openSorce.getText();
             assertEquals("OPEN SOURCE", openSorceName);
 
-            WebElement privacyPolicy = driver.findElement(By.xpath("//*[@id=\"wrapper\"]/div[3]/div[1]/footer/div/div/div[1]/div[2]/div/ul[1]/li[3]/a"));
+            WebElement privacyPolicy = driver.findElement(By.xpath("//a[normalize-space()='PRIVACY POLICY']"));
             String privacyPolicyName = privacyPolicy.getText();
             assertEquals("PRIVACY POLICY", privacyPolicyName);
 
-            WebElement cookiePolicy = driver.findElement(By.xpath("//*[@id=\"wrapper\"]/div[3]/div[1]/footer/div/div/div[1]/div[2]/div/ul[2]/li[1]/a"));
+            WebElement cookiePolicy = driver.findElement(By.xpath("//a[normalize-space()='PRIVACY POLICY']"));
             String cookiePolicyName = cookiePolicy.getText();
             assertEquals("COOKIE POLICY", cookiePolicyName);
 
-            WebElement applicantPrivacyNotoce = driver.findElement(By.xpath("//*[@id=\"wrapper\"]/div[3]/div[1]/footer/div/div/div[1]/div[2]/div/ul[2]/li[2]/a"));
+            WebElement applicantPrivacyNotoce = driver.findElement(By.xpath("//a[normalize-space()='APPLICANT PRIVACY NOTICE']"));
             String applicantPrivacyNotoceName = applicantPrivacyNotoce.getText();
             assertEquals("APPLICANT PRIVACY NOTICE", applicantPrivacyNotoceName);
 
-            WebElement webAccesability = driver.findElement(By.xpath("//*[@id=\"wrapper\"]/div[3]/div[1]/footer/div/div/div[1]/div[2]/div/ul[2]/li[3]/a"));
+            WebElement webAccesability = driver.findElement(By.xpath("//a[normalize-space()='WEB ACCESSIBILITY']"));
             String webAccesabilityName = webAccesability.getText();
             assertEquals("WEB ACCESSIBILITY", webAccesabilityName);
 
